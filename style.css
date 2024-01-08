@@ -9,6 +9,8 @@ body {
 header {
     padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: flex-start;
 }
 
 h1 {
@@ -26,6 +28,39 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+    padding: 20px;
+}
+
+button {
+    color:#36454f;
+    background-color: #FAF9F6 ;
+    font-weight: bolder;
+    border: none;
+    padding-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+main.details {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.poster-container {
+    flex: 1;
+}
+
+#poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.movie-details {
+    flex: 2;
     padding: 20px;
 }
 
