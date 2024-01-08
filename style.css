@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FAF9F6;
+    color: #36454f;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px; /* Add margin to the bottom of h1 */
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    max-width: 500px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #36454f;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
