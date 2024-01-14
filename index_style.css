@@ -1,25 +1,18 @@
+/* Body Styling */
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins';
     box-sizing: border-box;
-    background-color: #FAF9F6;
-    color: #36454f;
+    background-color: #eff0f5;
+    color: #094d74;
 }
 
+/* Header and Search bar */
 header {
     padding: 20px;
     text-align: center;
-}
-
-header.detail-header {
-    text-align: center;
-    display: flex;
-    justify-content: flex-start;
-}
-
-h1 {
-    margin-bottom: 20px; /* Add margin to the bottom of h1 */
 }
 
 input {
@@ -27,6 +20,8 @@ input {
     font-size: 16px;
     width: 70%;
     max-width: 500px;
+    color: #094d74;
+    margin-top: 20px;
 }
 
 main {
@@ -37,7 +32,7 @@ main {
 }
 
 button {
-    color:#36454f;
+    color:#094d74;
     background-color: #FAF9F6 ;
     font-weight: bolder;
     border: none;
@@ -54,39 +49,24 @@ main.details {
     margin: 20px auto;
 }
 
-.poster-container {
-    flex: 1;
-}
-
-#poster {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.movie-details {
-    flex: 2;
-    padding: 20px;
-}
-
 footer {
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    background-color: #36454f;
+    background-color: #094d74;
     color: white;
+    border-top: 20px;
 }
 
 footer p {
     margin: 0;
 }
 
+
 .movie-card {
     width: 200px;
     margin: 20px;
-    background-color: #1F2D35;
+    background-color: #094d74;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -112,3 +92,4 @@ footer p {
     color: white;
     font-weight: bold;
 }
+

@@ -3,6 +3,8 @@ const apiKey = 'cd81926890daa6aefc832d9f5e44946e'; // Replace with your actual A
 const baseUrl = 'https://api.themoviedb.org/3';
 const imageBaseUrl = 'http://image.tmdb.org/t/p/w500';
 
+let moviesGrid;
+
 // Function to fetch data using the fetch API
 async function fetchData(endpoint) {
     try {
@@ -19,7 +21,6 @@ async function fetchData(endpoint) {
 }
 
 // Initial setup
-// Move this block outside of the displayUpcomingMovies function
 document.addEventListener('DOMContentLoaded', () => {
     // Check if the current page is the index page
     const isIndexPage = window.location.href.includes('index.html');
@@ -35,7 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Clicked on movie card with movieId:', movieId);
                 window.location.href = `detail.html?movieId=${movieId}`;
             }
-        });        
+        });
+
+        // Add event listener for Enter key in search input
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query !== '') {
+                    searchMovies(query);
+                }
+            }
+        });
     } else {
         // Extract movie ID from the URL and display details on the detail page
         const movieId = window.location.search.split('=')[1];
@@ -95,8 +107,7 @@ async function searchMovies(query) {
     const data = await fetchData(endpoint);
 
     if (data && data.results) {
-        const moviesGrid = document.getElementById('moviesGrid');
-        moviesGrid.innerHTML = '';
+        moviesGrid.innerHTML = ''; // Clear previous content
 
         data.results.forEach((movie) => {
             const movieCard = document.createElement('div');
@@ -139,12 +150,19 @@ async function displayMovieDetails(movieId) {
             const movieReleaseDate = document.getElementById('releaseDate');
             const movieOverview = document.getElementById('overview');
             const moviePoster = document.getElementById('poster');
+            
+            const movieOrigTitle = document.getElementById('origTitle');
+            const movieTagLine= document.getElementById('tagLine');
+            const movieOrigLang = document.getElementById('origLang');
+            const movieimdbID = document.getElementById('imdbID');
+            const movieHomePage = document.getElementById('homePage');
+            const movieRunTime = document.getElementById('runTime');
+            const moviePopularity = document.getElementById('popularity');
+            const movieStatus = document.getElementById('status');
+
+            
 
             // Log the elements before updating
-            console.log('Movie title element:', movieTitle);
-            console.log('Release date element:', movieReleaseDate);
-            console.log('Overview element:', movieOverview);
-            console.log('Poster element:', moviePoster);
 
             // Check if the movie has a poster path before setting the image source
             if (movieDetails.poster_path) {
@@ -159,19 +177,64 @@ async function displayMovieDetails(movieId) {
             if (movieTitle) {
                 movieTitle.textContent = movieDetails.title;
             } else {
-                console.error('Movie title element not found.');
+                console.error('Movie title not found.');
             }
 
             if (movieReleaseDate) {
                 movieReleaseDate.textContent = `Release Date: ${movieDetails.release_date}`;
             } else {
-                console.error('Release date element not found.');
+                console.error('Release date not found.');
             }
 
             if (movieOverview) {
                 movieOverview.textContent = movieDetails.overview;
             } else {
-                console.error('Overview element not found.');
+                console.error('Overview not found.');
+            }
+
+            if (movieOrigTitle) {
+                movieOrigTitle.textContent = movieDetails.original_language;
+            } else {
+                console.error('Original Language not found.');
+            }
+
+            if (movieTagLine) {
+                movieTagLine.textContent = movieDetails.tagline;
+            } else {
+                console.error('Tagline not found.');
+            }
+
+            if (movieOrigLang) {
+                movieOrigLang.textContent = movieDetails.original_language;
+            } else {
+                console.error('Original Language not found.');
+            }
+
+            if (movieimdbID) {
+                movieimdbID.textContent = movieDetails.imdb_id;
+            } else {
+                console.error('IMDB ID not found.');
+            }
+
+            if (movieHomePage) {
+                movieHomePage.textContent = movieDetails.homepage;
+            } else {
+                console.error('Movie Homepage not found.');
+            }
+            if (movieRunTime) {
+                movieRunTime.textContent = `${movieDetails.runtime} minutes`;
+            } else {
+                console.error('Run Time: not found.');
+            }
+            if (moviePopularity) {
+                moviePopularity.textContent = movieDetails.popularity;
+            } else {
+                console.error('Movie Popularity not found.');
+            }
+            if (movieStatus) {
+                movieStatus.textContent = movieDetails.status;
+            } else {
+                console.error('Movie Status not found.');
             }
 
         } else {
@@ -181,10 +244,6 @@ async function displayMovieDetails(movieId) {
         console.error('Error fetching movie details:', error);
     }
 }
-
-
-
-
 
 // Function to display similar movies on the detail page
 async function displaySimilarMovies(movieId) {

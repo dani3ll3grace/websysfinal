@@ -3,21 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail_style.css">
     <title>Movie Details</title>
 </head>
 <body>
     <header>
-        <button onclick="goBack()" class="back-button">&#x1F878;</button>
+        <button onclick="goBack()" class="back-button"></button>
     </header>
 
-    <main class="details">
-        <h1 id="movieTitle">Hello</h1>
-        <p id="releaseDate">Hello</p>
-        <p id="overview">Hello</p>
-        <img id="poster" src="" alt="Hello">
+    <main>
+        <div class="details">
+                <img id="poster" src="" alt="Movie Poster">
+                <h1 id="movieTitle">Movie Title</h1>
+                <p id="releaseDate">Release Date</p>
+                <p id="overview">Overview</p>
+        </div>
 
+        <div class="add_details">
+            <h2>Additional Details</h2>
+            <table class="table-bold-center">
+                <tr>
+                    <td>Original Title:</td>
+                    <td id="origTitle"></td>
+                </tr>
+                <tr>
+                    <td>Tag Line:</td>
+                    <td id="tagLine"></td>
+                </tr>
+                <tr>
+                    <td>Original Language:</td>
+                    <td id="origLang"></td>
+                </tr>
+                <tr>
+                    <td>IMDB ID:</td>
+                    <td id="imdbID"></td>
+                </tr>
+                <tr>
+                    <td>Home Page:</td>
+                    <td id="homePage"></td>
+                </tr>
+                <tr>
+                    <td>Runtime:</td>
+                    <td id="runtime"></td>
+                </tr>
+                <tr>
+                    <td>Popularity:</td>
+                    <td id="popularity"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="status"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2>Similar Movies</h2>
+        <div id="similarMoviesList" class="similar-movies-grid">
+        </div>
     </main>
+
+    <footer>
+        <p>Websystem Final</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

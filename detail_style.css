@@ -1,0 +1,102 @@
+body {
+    font-family: 'Poppins';
+    background-color: #eff0f5;
+    color: #5A5A5A;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.back-button {
+    color: #094d74;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.back-button:before {
+    content: "\1F878"; /* Unicode character for left arrow */
+    margin-left: 5%;
+    font-size: 35px; /* Adjust the font size of the arrow */
+}
+
+.details {
+    text-align: center;
+    width: 90%;
+}
+.details-container {
+    flex: 1;
+}
+
+.poster-container {
+    margin-right: 20px;
+}
+
+#poster {
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+.similar-movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust the minmax values as needed */
+    gap: 20px;
+    width: 90%
+}
+
+.similar-movie-item {
+    background-color: #094d74;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.similar-movie-item:hover {
+    transform: scale(1.05);
+}
+
+.similar-movie-poster {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.similar-movie-title {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    background-color: #094d74;
+    color: white;
+    border-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.table-bold-center td:first-child {
+    font-weight: bold;
+    text-align: left;
+}
+
+.add_details {
+    width:90%;
+}
