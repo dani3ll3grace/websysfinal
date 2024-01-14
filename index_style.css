@@ -1,4 +1,4 @@
-/* Body Styling */
+/* Body Style   ||||||||||||||||||||||||||||||||*/
 
 body {
     margin: 0;
@@ -9,7 +9,7 @@ body {
     color: #094d74;
 }
 
-/* Header and Search bar */
+/* Header, Search Bar, Tick Box   ||||||||||||||||||||||||||||||||*/
 header {
     padding: 20px;
     text-align: center;
@@ -24,6 +24,32 @@ input {
     margin-top: 20px;
 }
 
+label {
+    margin-right: 10px;
+    line-height: 1;
+    margin-right: 10px;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #094d74;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    vertical-align: -50%; 
+}
+
+input[type="checkbox"]:checked {
+    background-color: #094d74;
+    border-color: #094d74;
+    color: #fff;
+}
+
+/* Main Style   ||||||||||||||||||||||||||||||||*/
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -31,6 +57,13 @@ main {
     padding: 20px;
 }
 
+main.details {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Button   ||||||||||||||||||||||||||||||||*/
 button {
     color:#094d74;
     background-color: #FAF9F6 ;
@@ -43,12 +76,7 @@ button {
     align-items: center;
 }
 
-main.details {
-    display: flex;
-    max-width: 800px;
-    margin: 20px auto;
-}
-
+/* Footer   ||||||||||||||||||||||||||||||||*/
 footer {
     text-align: center;
     padding: 10px;
@@ -63,6 +91,7 @@ footer p {
 }
 
 
+/* Movie Grid   ||||||||||||||||||||||||||||||||*/
 .movie-card {
     width: 200px;
     margin: 20px;
@@ -91,31 +120,4 @@ footer p {
     text-align: center;
     color: white;
     font-weight: bold;
-}
-
-/* Style for the checkbox */
-label {
-    margin-right: 10px;
-    line-height: 1;
-    margin-right: 10px;
-    font-size: 18px;
-    padding-top: 10px;
-}
-
-/* Optional: Add some styling to make it look better */
-input[type="checkbox"] {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #094d74;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-    vertical-align: -50%; /* Set the vertical alignment to middle */
-}
-
-input[type="checkbox"]:checked {
-    background-color: #094d74;
-    border-color: #094d74;
-    color: #fff;
 }

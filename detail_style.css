@@ -1,3 +1,4 @@
+/* Body CSS*/
 body {
     font-family: 'Poppins';
     background-color: #eff0f5;
@@ -12,6 +13,7 @@ main {
     padding: 20px;
 }
 
+/* Back Button   ||||||||||||||||||||||||||||||||*/
 .back-button {
     color: #094d74;
     border: none;
@@ -22,11 +24,12 @@ main {
 }
 
 .back-button:before {
-    content: "\1F878"; /* Unicode character for left arrow */
+    content: "\1F878"; /*left arrow */
     margin-left: 5%;
-    font-size: 35px; /* Adjust the font size of the arrow */
+    font-size: 35px;
 }
 
+/* Movie Details   ||||||||||||||||||||||||||||||||*/
 .details {
     text-align: center;
     width: 90%;
@@ -44,6 +47,17 @@ main {
     border-radius: 10px;
 }
 
+/* Additional Details   ||||||||||||||||||||||||||||||||*/
+.table-bold-center td:first-child {
+    font-weight: bold;
+    text-align: left;
+}
+
+.add_details {
+    width:90%;
+}
+
+/* Similar Movies  ||||||||||||||||||||||||||||||||*/
 .similar-movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust the minmax values as needed */
@@ -79,6 +93,7 @@ main {
     font-weight: bold;
 }
 
+/* Footer   ||||||||||||||||||||||||||||||||*/
 footer {
     text-align: center;
     padding: 10px;
@@ -90,35 +105,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-.table-bold-center td:first-child {
-    font-weight: bold;
-    text-align: left;
-}
-
-.add_details {
-    width:90%;
-}
-
-/* Style for the checkbox */
-label {
-    margin-right: 10px;
-}
-
-/* Optional: Add some styling to make it look better */
-input[type="checkbox"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #333;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-}
-
-input[type="checkbox"]:checked {
-    background-color: #3498db;
-    border-color: #3498db;
-    color: #fff;
 }
