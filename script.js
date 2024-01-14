@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        const sortCheckbox = document.getElementById('sortCheckbox');
+        sortCheckbox.addEventListener('change', () => {
+            const isChecked = sortCheckbox.checked;
+            if (isChecked) {
+                // Call a function to sort movies alphabetically
+                sortMoviesAlphabetically();
+            } else {
+                // Call a function to reset to default sorting
+                displayUpcomingMovies();
+            }
+        });
+
         // Add event listener for Enter key in search input
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('keydown', (event) => {
@@ -57,8 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
-
 
 
 async function displayUpcomingMovies() {
@@ -306,3 +316,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
+async function sortMoviesAlphabetically() {
+    try {
+        const endpoint = `movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+        const data = await fetchData(endpoint);
+
+        if (data && data.results) {
+            // Sort the movies alphabetically by title
+            const sortedMovies = data.results.sort((a, b) => {
+                const titleA = a.title.toUpperCase();
+                const titleB = b.title.toUpperCase();
+                if (titleA < titleB) return -1;
+                if (titleA > titleB) return 1;
+                return 0;
+            });
+
+            // Display the sorted movies
+            const moviesGrid = document.getElementById('moviesGrid');
+            moviesGrid.innerHTML = '';
+
+            for (const movie of sortedMovies) {
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                movieCard.setAttribute('data-movie-id', movie.id);
+                movieCard.innerHTML = `
+                    <img src="${imageBaseUrl}/${movie.poster_path}" alt="${movie.title}" class="movie-poster">
+                    <p class="movie-title">${movie.title}</p>
+                `;
+                movieCard.addEventListener('click', async () => await showMovieDetails(movie.id));
+                moviesGrid.appendChild(movieCard);
+            }
+        }
+    } catch (error) {
+        console.error('Error sorting movies alphabetically:', error);
+    }
+}

@@ -93,3 +93,29 @@ footer p {
     font-weight: bold;
 }
 
+/* Style for the checkbox */
+label {
+    margin-right: 10px;
+    line-height: 1;
+    margin-right: 10px;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+/* Optional: Add some styling to make it look better */
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #094d74;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    vertical-align: -50%; /* Set the vertical alignment to middle */
+}
+
+input[type="checkbox"]:checked {
+    background-color: #094d74;
+    border-color: #094d74;
+    color: #fff;
+}
