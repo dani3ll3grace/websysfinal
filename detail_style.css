@@ -21,12 +21,13 @@ main {
     cursor: pointer;
     display: flex;
     align-items: center;
+    font-size: 35px;
 }
 
 .back-button:before {
     content: "\1F878"; /*left arrow */
     margin-left: 5%;
-    font-size: 35px;
+    
 }
 
 /* Movie Details   ||||||||||||||||||||||||||||||||*/

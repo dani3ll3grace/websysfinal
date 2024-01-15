@@ -63,18 +63,6 @@ main.details {
     margin: 20px auto;
 }
 
-/* Button   ||||||||||||||||||||||||||||||||*/
-button {
-    color:#094d74;
-    background-color: #FAF9F6 ;
-    font-weight: bolder;
-    border: none;
-    padding-left: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
 
 /* Footer   ||||||||||||||||||||||||||||||||*/
 footer {
